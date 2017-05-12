@@ -12,17 +12,17 @@ class Groupe extends Model
 
     public function users()
     {
-    	$this->hasMany('App\User');
+    	return $this->hasMany('App\User');
     }
 
     public function sousGroupes()
     {
-    	$this->hasMany('App\SousGroupe');
+    	return $this->hasMany('App\SousGroupe');
     }
 
     public function keywords()
     {
-        $this->belongsToMany('App\Keyword');
+        return $this->belongsToMany('App\Keyword');
     }
 
     public function abonnement()

@@ -29,16 +29,16 @@ class User extends Authenticatable
 
     public function groupe()
     {
-        $this->belongsTo('App\Groupe');
+        return $this->belongsTo('App\Groupe');
     }
 
     public function sousGroupe()
     {
-        $this->belongsTo('App\SousGroupe');
+        return $this->belongsTo('App\SousGroupe');
     }
 
     public function roles()
     {
-        $this->belongsToMany('App\Role');
+        return $this->belongsToMany('App\Role');
     }
 }

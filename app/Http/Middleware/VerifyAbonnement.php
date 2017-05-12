@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
+use App\Groupe;
 use Carbon\Carbon;
 
 class VerifyAbonnement
@@ -17,7 +18,17 @@ class VerifyAbonnement
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::user()->role != 'admin' && Auth::user()->abonnement->end_date < Carbon::now()->toDateString())
+        $user = Auth::user();
+        $groupe = Groupe::find($user->groupe);
+        $roles = $user->roles;
+
+        foreach ($roles as $role)
+        {
+            if ($role->name === 'SuperAdmin')
+                return $next($request);
+        }
+
+        if ($groupe->abonnement->end_date < Carbon::now()->toDateString())
             return redirect('/home/expired');
         return $next($request);
     }
