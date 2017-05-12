@@ -37,9 +37,8 @@ class User extends Authenticatable
         $this->belongsTo('App\SousGroupe');
     }
 
-    public function keywords()
+    public function roles()
     {
-        return $this->belongsToMany('App\Keyword');
+        $this->belongsToMany('App\Role');
     }
-
 }

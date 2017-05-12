@@ -20,6 +20,11 @@ class Groupe extends Model
     	$this->hasMany('App\SousGroupe');
     }
 
+    public function keywords()
+    {
+        $this->belongsToMany('App\Keyword');
+    }
+
     public function abonnement()
     {
         return $this->hasOne('App\Abonnement');

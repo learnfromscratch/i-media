@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Activity extends Model
+class RoleUser extends Model
 {
     protected $fillable = [
-    	'title', 'type',
+    	'role_id', 'user_id'
     ];
 }

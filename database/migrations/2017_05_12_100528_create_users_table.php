@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSousGroupesTable extends Migration
+class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,17 @@ class CreateSousGroupesTable extends Migration
      */
     public function up()
     {
-        Schema::create('sous_groupes', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('cin')->unique();
             $table->string('name');
+            $table->string('email');
+            $table->string('password');
             $table->integer('groupe_id')->unsigned();
             $table->foreign('groupe_id')->references('id')->on('groupes')->onUpdate('cascade')->onDelete('cascade');
-            $table->text('keywords');
+            $table->integer('tel')->unsigned();
+            $table->string('address');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -30,6 +35,6 @@ class CreateSousGroupesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sous_groupes');
+        Schema::dropIfExists('users');
     }
 }

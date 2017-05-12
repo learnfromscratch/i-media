@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKeywordUserTable extends Migration
+class CreateKeywordGroupesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateKeywordUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('keyword_user', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('keyword_groupes', function (Blueprint $table) {
             $table->integer('keyword_id')->unsigned();
-            $table->integer('user_id')->unsigned();
+            $table->integer('groupe_id')->unsigned();
             $table->foreign('keyword_id')->references('id')->on('keywords')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('groupe_id')->references('id')->on('groupes')->onDelete('cascade')->onUpdate('cascade');
+            $table->primary('keyword_id', 'groupe_id');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateKeywordUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('keyword_user');
+        Schema::dropIfExists('keyword_groupes');
     }
 }

@@ -16,7 +16,7 @@ class CreateGroupesTable extends Migration
         Schema::create('groupes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('nbr_user')->unsigned();
+            $table->integer('nbr_user')->unsigned()->default(0);
             $table->timestamps();
         });
     }
