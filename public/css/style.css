@@ -1,0 +1,172 @@
+body, html {
+	margin-top: 50px;
+	font-family: 'Roboto', sans-serif;
+}
+
+/* Navbar */
+.navbar-toggle {
+	background-color: white;
+}
+.navbar {
+	background: rgb(55, 75, 102);
+	padding-top: 15px;
+	padding-bottom: 5px;
+	transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+}
+.navbar-default .navbar-nav li a i {
+	color: white;
+}
+
+.username {
+	color: white;
+}
+
+.navbar .badge {
+   position:absolute;
+   top:3px;
+   right:7px;
+   font-size:.7em;
+   background:red;
+   color:white;
+   width:20px;height:20px;
+   text-align:center;
+   line-height:15px;
+   border-radius:100%;
+}
+
+/* Scroll animation */
+.shrink {
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+/* Search bar */
+#search {
+	font-weight: 100;
+	border-color: rgb(55, 75, 102);
+	background-color: rgba(255, 255, 255, .3);
+	width: 200px;
+	transition: width .5s;
+	-webkit-transition: width .5s;
+}
+#search:focus {
+	background-color: rgba(255, 255, 255, 1);
+	width: 300px;
+}
+
+.well {
+	background-color: white;
+}
+
+.title {
+	color: black;
+}
+
+/* Siede bar */
+.sidebar {
+	position: fixed;
+	background-color: transparent;
+}
+
+.sidebar a li {
+	padding: 5px 0 5px 20px;
+	margin-bottom: 3px;
+	font-size: 13px;
+}
+.sidebar a {
+	color: rgb(71, 162, 255);
+	text-decoration: none;
+	font-size: 13px;
+}
+.sidebar a li:hover {
+	background-color: white;
+	color: black;
+	transition: all 0.4s ease;
+	-webkit-transition: all 0.4s ease;
+}
+
+.sidebar .active {
+	background-color: white;
+	color: black;
+}
+
+.scroll {
+	top: 70px;
+}
+
+.sidebar .badge {
+	background-color: transparent;
+	color: #aaa;
+}
+
+/* Filter */
+.filter li a {
+	font-size: 14px;
+	color: rgb(55, 75, 102);
+}
+
+.filter hr {
+	height: 14px;
+	width: 2px;
+	background-color: black;
+}
+
+/* Media section */
+.media {
+	margin-bottom: 3px;
+}
+
+.media a {
+	color: rgb(71, 162, 235);
+}
+
+.media p {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+hr {
+	padding: 0;
+	margin: 0;
+	height: 1px;
+	background-color: #eee;
+}
+
+/* LeftSide */
+.leftside {
+	position: fixed;
+}
+
+/* Tags */
+#tags {
+	-moz-box-shadow: 0px 5px 5px 0px #cfcfcf;
+	-webkit-box-shadow: 0px 5px 5px 0px #cfcfcf;
+	-o-box-shadow: 0px 5px 5px 0px #cfcfcf;
+	box-shadow: 0px 5px 5px 0px #cfcfcf;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#cfcfcf, Direction=180, Strength=5);
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+/*Newsletter */
+#newsletter {
+	-moz-box-shadow: 0px 5px 5px 0px #cfcfcf;
+	-webkit-box-shadow: 0px 5px 5px 0px #cfcfcf;
+	-o-box-shadow: 0px 5px 5px 0px #cfcfcf;
+	box-shadow: 0px 5px 5px 0px #cfcfcf;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#cfcfcf, Direction=180, Strength=5);
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+#newsletter input {
+	background-color: #eee;
+}
+#newsletter input:focus {
+	background-color: #fff;
+}
+
+
+/* Spinner */
