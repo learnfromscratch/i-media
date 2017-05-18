@@ -31,6 +31,15 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/users/destroy/{id}', 'UserController@destroy')->name('users.destroy');
     });
 
+Route::group(['middleware' => 'admin'], function () {
+    Route::get('/groupes/all', 'GroupeController@index')->name('groupes.index');
+    Route::get('/groupes/create', 'GroupeController@create')->name('groupes.create');
+    Route::post('/groupes/store', 'GroupeController@store')->name('groupes.store');
+    Route::get('/groupes/{id}', 'GroupeController@show')->name('groupes.show');
+    Route::post('/groupes/update/{id}', 'GroupeController@update')->name('groupes.update');
+    Route::get('/groupes/destroy/{id}', 'GroupeController@destroy')->name('groupes.destroy');
+    });
+
 Route::get('/admin/dashboard', 'AdminController@index')->name('admin.dashboard');
 
 Route::get('/admin/indexing', 'AdminController@indexing')->name('admin.indexing');

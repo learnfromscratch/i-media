@@ -69,7 +69,7 @@
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="username">{{ Auth::user()->name }}</span><i class="fa fa-caret-down fa-fw" aria-hidden="true"></i></a>
                   <ul class="dropdown-menu">
-                    @if (Auth::user()->role === 'admin')
+                    @if (Auth::user()->role->name === 'SuperAdmin')
                       <li><a href="{{ route('admin.dashboard') }}">Espace administrateur</a></li>
                     @endif
                     <li><a href="#">Profile</a></li>
@@ -105,9 +105,7 @@
                 <h4 class="title">Mots clés</h4>
                 <p>
                   <h4>
-                    @foreach (Auth::user()->keywords as $keyword)
-                      <span class="label label-success">{{ $keyword->name }}</span>
-                    @endforeach
+                    <span class="label label-success"></span>
                   </h4>
                 </p>
               </div>

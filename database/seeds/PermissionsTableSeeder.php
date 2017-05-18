@@ -14,6 +14,6 @@ class PermissionsTableSeeder extends Seeder
         DB::table('permissions')->insert(['name' => 'create', 'description' => 'Permission de créer']);
         DB::table('permissions')->insert(['name' => 'read', 'description' => 'Permission de lire']);
         DB::table('permissions')->insert(['name' => 'update', 'description' => 'Permission de modifier']);
-        DB::table('permissions')->insert(['name' => 'delete', 'description' => 'Permission de supprimer']);
+        DB::table('permissions')->insert(['name' => 'destroy', 'description' => 'Permission de supprimer']);
     }
 }

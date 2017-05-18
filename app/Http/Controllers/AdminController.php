@@ -4,11 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-use App\UserKeyword;
 use App\Keyword;
 use App\Repositories\Solarium;
 use App\Repositories\Alert;
-use App\Message;
+use App\Groupe;
 
 class AdminController extends Controller
 {
@@ -22,9 +21,11 @@ class AdminController extends Controller
 
     public function index(\Solarium\Client $client)
     {
-        $nbrUser = count(User::all());
+        $nbrUser = count(User::where('groupe_id', '<>', 1)->get());
+        $nbrGroupe = count(User::where('id', '<>', 1)->get());
         $indexed = (new Solarium($client))->indexed();
-    	return view('admin.dashboard', compact('nbrUser', 'indexed'));
+        $nbrKeyword = count(Keyword::all());
+    	return view('admin.dashboard', compact('nbrGroupe', 'nbrUser', 'indexed', 'nbrKeyword'));
     }
 
     public function indexing(\Solarium\Client $client)
@@ -42,12 +43,5 @@ class AdminController extends Controller
 
         return view('admin.users', compact('users'));
     }
-
-    public function addUsers()
-    {
-        $keywords = Keyword::all();
-        return view('admin.addUsers', compact('keywords'));
-    }
-
 
 }

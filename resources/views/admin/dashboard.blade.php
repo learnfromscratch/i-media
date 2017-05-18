@@ -7,7 +7,13 @@
 				<ul class="nav">
 					<li><a href="{{ route('admin.dashboard') }}" class="active"><i class="lnr lnr-home"></i> <span>Tableau de bord</span></a></li>
 					<li>
-						<a href="{{ route('users.all') }}"><i class="lnr lnr-pencil"></i> <span>Gestion des clients</span></a>
+						<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-pencil"></i> <span>Gestion des clients</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+						<div id="subPages" class="collapse ">
+							<ul class="nav">
+								<li><a href="{{ route('groupes.index') }}">Liste des clients</a></li>
+								<li><a href="{{ route('users.all') }}">Comptes utilisateurs</a></li>
+							</ul>
+						</div>
 					</li>
 				</ul>
 			</nav>
@@ -31,10 +37,19 @@
 			<div class="row">
 				<div class="col-md-3">
 					<div class="metric">
+						<span class="icon"><i class="fa fa-users"></i></span>
+						<p>
+							<span class="number">{{ $nbrGroupe }}</span>
+							<span class="title">Clients</span>
+						</p>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="metric">
 						<span class="icon"><i class="fa fa-user"></i></span>
 						<p>
 							<span class="number">{{ $nbrUser }}</span>
-							<span class="title">Clients</span>
+							<span class="title">Comptes utilisateurs</span>
 						</p>
 					</div>
 				</div>
@@ -49,19 +64,10 @@
 				</div>
 				<div class="col-md-3">
 					<div class="metric">
-						<span class="icon"><i class="fa fa-eye"></i></span>
+						<span class="icon"><i class="fa fa-key"></i></span>
 						<p>
-							<span class="number">0</span>
-							<span class="title">Visits</span>
-						</p>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="metric">
-						<span class="icon"><i class="fa fa-download"></i></span>
-						<p>
-							<span class="number">@php echo file_get_contents('Articles/pdf_download.txt') @endphp</span>
-							<span class="title">PDF téléchargés</span>
+							<span class="number">{{ $nbrKeyword }}</span>
+							<span class="title">Mots clés</span>
 						</p>
 					</div>
 				</div>

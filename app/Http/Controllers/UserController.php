@@ -6,9 +6,15 @@ use App\User;
 use App\Keyword;
 use Illuminate\Http\Request;
 use Carbon\carbon;
+use Gate;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +22,7 @@ class UserController extends Controller
      */
     public function all()
     {
-        $users = User::select()->orderBy('updated_at', 'desc')->get();
+        $users = User::where('groupe_id', '<>', 1)->orderBy('groupe_id', 'desc')->get();
         return view('admin.users', compact('users'));
     }
 
@@ -27,6 +33,11 @@ class UserController extends Controller
      */
     public function create()
     {
+        if (Gate::denies('create', User::class))
+        {
+            return redirect()->back()->with('error', 'Vous n êtes pas autorisé à éffectuer cette action');
+        }
+
         return view('admin.create');
     }
 
@@ -38,8 +49,13 @@ class UserController extends Controller
      */
     public function show($id)
     {
+        if (Gate::denies('read', User::class))
+        {
+            return redirect()->back()->with('error', 'Vous n êtes pas autorisé à éffectuer cette action');
+        }
+
         $user = User::find($id);
-        $keywords = Keyword::all();
+        $keywords = $user->groupe()->first()->keywords;
         return view('admin.profil', compact('user', 'keywords'));
     }
 
@@ -52,6 +68,11 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if (Gate::denies('update', User::class))
+        {
+            return redirect()->back()->with('error', 'Vous n êtes pas autorisé à éffectuer cette action');
+        }
+
         $user = User::find($id);
         $user->email = $request['email'];
         $user->tel = $request['tel'];
@@ -71,6 +92,7 @@ class UserController extends Controller
         $user->updated_at = Carbon::now();
 
         $user->save();
+
         return redirect()->back()->with('success', 'Modifier avec succès');
     }
 
@@ -82,10 +104,14 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
+        if (Gate::denies('destroy', User::class))
+        {
+            return redirect()->back()->with('error', 'Vous n êtes pas autorisé à éffectuer cette action');
+        }
+
         $user = User::find($id);
-        if ($user->role == 'admin')
-            return redirect()->route('users.all')->with('error', 'impossible de supprimer cet utilisateur');
         $user->delete();
+        
         return redirect()->route('users.all')->with('success', 'Le client a été supprimer avec succès');
     }
 }

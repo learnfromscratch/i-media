@@ -22,3 +22,20 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Groupe::class, function (Faker\Generator $faker) {
+
+    return [
+        'name' => $faker->name,
+        'nbrUser' => (int) $faker->numerify( '####' ),
+    ];
+});
+
+$factory->define(App\Abonnement::class, function (Faker\Generator $faker) {
+
+    return [
+        'start_date' => $faker->dateTimeBetween('this day', '+1 day'),
+        'end_date' => $faker->dateTimeBetween('this day', '+6 weeks'),
+        'groupe_id' => factory(App\Groupe::class)->create()->id,
+    ];
+});

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class KeywordGroupe extends Model
+class GroupeKeyword extends Model
 {
     protected $fillable = [
     	'keyword_id', 'groupe_id'

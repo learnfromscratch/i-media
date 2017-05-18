@@ -25,7 +25,7 @@
 	<div class="col-md-12">
 		<div class="panel">
 			<div class="panel-heading">
-				<h3 class="panel-title">Liste des comptes utilisateurs</h3><br>
+				<h3 class="panel-title">Liste des clients</h3><br>
 				<div class="row">
 					<a href="{{ route('users.create') }}" class="btn btn-success btn-toastr"><i class="fa fa-plus fa-fw"></i> Ajouter un client</a>
 					
@@ -41,22 +41,29 @@
 					<thead>
 						<tr>
 							<th>Nom</th>
-							<th>E-Mail</th>
-							<th>Groupe</th>
+							<th>Nombre d'utilisateur</th>
+							<th>Téléphone</th>
+							<th>Adresse</th>
 							<th>Status abonnement</th>
+							<th>Action</th>
 						</tr>
 					</thead>
 					<tbody>
-						@foreach ($users as $user)
+						@foreach ($groupes as $groupe)
 							<tr>
-								<td>{{ $user->name }}</td>
-								<td>{{ $user->email }}</td>
-								<td>{{ $user->groupe()->value('name') }}</td>
-								@if ($user->groupe->abonnement->end_date >= Carbon\Carbon::now()->toDateString())
+								<td>{{ $groupe->name }}</td>
+								<td>{{ count($groupe->users) }} / {{ $groupe->nbrUser }}</td>
+								<td>{{ $groupe->tel }}</td>
+								<td>{{ $groupe->address }}</td>
+								@if ($groupe->abonnement->end_date >= Carbon\Carbon::now()->toDateString())
 									<td><span class="label label-success">VALIDE</span></td>
 								@else
 									<td><span class="label label-warning">NON VALIDE</span></td>
 								@endif
+								<td>
+									<a href="{{ route('groupes.show', ['id' => $groupe->id]) }}" class="btn btn-info btn-xs">Afficher</a>
+									<a href="{{ route('groupes.destroy', ['id' => $groupe->id]) }}" class="btn btn-danger btn-xs">Supprimer</a>
+								</td>
 							</tr>
 						@endforeach
 					</tbody>

@@ -20,13 +20,9 @@ class VerifyAbonnement
     {
         $user = Auth::user();
         $groupe = Groupe::find($user->groupe);
-        $roles = $user->roles;
 
-        foreach ($roles as $role)
-        {
-            if ($role->name === 'SuperAdmin')
-                return $next($request);
-        }
+        if ($user->role->name === 'SuperAdmin')
+            return $next($request);
 
         if ($groupe->abonnement->end_date < Carbon::now()->toDateString())
             return redirect('/home/expired');

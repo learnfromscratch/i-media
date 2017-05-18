@@ -19,16 +19,17 @@ class Articles
 
 	public function init()
 	{
-		$roles = Auth::user()->roles;
-
+		$role = Auth::user()->role;
+		$sousGroupe = Auth::user()->roles;
+		
     	$querySearched = "";
 
-    	foreach ($roles as $role) {
-    		if ($role->name === 'SuperAdmin')
+		if ($role->name === 'SuperAdmin')
     			$querySearched = '"*:* ';
-    	}
     		
-		
+		/*foreach($user->keywords as $keyword){
+			$querySearched .= '"'.$keyword->name.'" ';
+		}*/
 			
 		$thequery = "";
 		$Textfields = ['Title', 'Fulltext'];

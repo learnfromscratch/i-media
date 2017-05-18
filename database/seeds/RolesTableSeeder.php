@@ -12,5 +12,7 @@ class RolesTableSeeder extends Seeder
     public function run()
     {
         DB::table('roles')->insert(['name' => 'SuperAdmin', 'description' => 'Administrateur OxData']);
+        DB::table('roles')->insert(['name' => 'Admin', 'description' => 'Administrateur d\'un client']);
+        DB::table('roles')->insert(['name' => 'Client', 'description' => 'Utilisateur d\'un client']);
     }
 }

@@ -47,10 +47,9 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
+    public function validator(array $data)
     {
         return Validator::make($data, [
-            'cin' => 'required|max:255|unique:users',
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
@@ -63,31 +62,14 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return User
      */
-    protected function create(array $data)
+    public function create(array $data)
     {
         $user = User::create([
-            'cin' => $data['cin'],
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'tel' => $data['tel'],
-            'address' => $data['address'],
+            'groupe_id' => $data['groupe_id'],
+            'sousGroupe_id' => $data['sousGroupe_id'],
         ]);
-
-        $data['tags'] = explode( ',', $data['tags']);
-        $keywords_id = [];
-        foreach ($data['tags'] as $val)
-        {
-            $keyword = Keyword::firstOrCreate(['name' => $val]);
-            array_push($keywords_id, $keyword->id);
-        }
-
-        $user->keywords()->attach($keywords_id === null ? [] : $keywords_id);
-
-        Abonnement::insert([
-            'start_date' => $data['start_date'],
-            'end_date' => $data['end_date'],
-            'user_id' => $user->id,
-            ]);
     }
 }
