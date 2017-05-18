@@ -27,7 +27,7 @@ $factory->define(App\Groupe::class, function (Faker\Generator $faker) {
 
     return [
         'name' => $faker->name,
-        'nbrUser' => (int) $faker->numerify( '####' ),
+        'nbrUser' => (int) $faker->numerify( '###' ),
     ];
 });
 

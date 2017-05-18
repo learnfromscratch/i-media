@@ -6,15 +6,8 @@
 			<nav>
 				<ul class="nav">
 					<li><a href="{{ route('admin.dashboard') }}"><i class="lnr lnr-home"></i> <span>Tableau de bord</span></a></li>
-					<li>
-						<a href="#subPages" data-toggle="collapse" class="collapsed active"><i class="lnr lnr-pencil"></i> <span>Gestion des clients</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-						<div id="subPages" class="collapse ">
-							<ul class="nav">
-								<li><a href="{{ route('groupes.index') }}">Liste des clients</a></li>
-								<li><a href="{{ route('users.all') }}">Comptes utilisateurs</a></li>
-							</ul>
-						</div>
-					</li>
+					<li><a href="{{ route('groupes.index') }}" class="active"><i class="lnr lnr-user"></i><span> Gestion des clients</span></a></li>
+					<li><a href="{{ route('users.all') }}"><i class="lnr lnr-users"></i><span> Comptes utilisateurs</span></a></li>
 				</ul>
 			</nav>
 		</div>
@@ -228,35 +221,20 @@
 			                  </div>
 			                </div>
 
-			                <div class="form-group{{ $errors->has('tel') ? ' has-error' : '' }}">
-			                  <label for="tel" class="col-sm-2 control-label">Téléphone</label>
+			                <div class="form-group">
+			                  <label for="role" class="col-sm-2 control-label">Rôle</label>
 
-			                  <div class="col-sm-10">
-			                    <input type="number" class="form-control" name="tel" placeholder="Saisissez le numéro de téléphone" value="{{ old('tel') }}">
-
-			                    @if ($errors->has('tel'))
-		                            <span class="help-block">
-		                                <strong>{{ $errors->first('tel') }}</strong>
-		                            </span>
-		                        @endif
-
+			                  <div class="col-sm-4">
+			                    <select class="form-control" name="role_id" required>
+			                    	<option disabled>--Selectionnez un role--</option>
+			                    	<option value="1">Super Admin</option>
+			                    	<option value="2">Admin</option>
+			                    	<option value="3">Client</option>
+			                    </select>
 			                  </div>
 			                </div>
 
-			                <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
-			                  <label for="address" class="col-sm-2 control-label">Adresse</label>
-
-			                  <div class="col-sm-10">
-			                    <input type="text" class="form-control" name="address" placeholder="Saisissez l'adresse" value="{{ old('address') }}">
-
-			                    @if ($errors->has('address'))
-		                            <span class="help-block">
-		                                <strong>{{ $errors->first('address') }}</strong>
-		                            </span>
-		                        @endif
-
-			                  </div>
-			                </div>
+			                <input type="hidden" name="groupe_id" value="1">
 
 			                <div class="form-group">
 			                    <div class="col-md-6 col-md-offset-4">

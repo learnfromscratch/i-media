@@ -6,15 +6,8 @@
 			<nav>
 				<ul class="nav">
 					<li><a href="{{ route('admin.dashboard') }}"><i class="lnr lnr-home"></i> <span>Tableau de bord</span></a></li>
-					<li>
-						<a href="#subPages" data-toggle="collapse" class="collapsed active"><i class="lnr lnr-pencil"></i> <span>Gestion des clients</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-						<div id="subPages" class="collapse ">
-							<ul class="nav">
-								<li><a href="{{ route('groupes.index') }}">Liste des clients</a></li>
-								<li><a href="{{ route('users.all') }}">Comptes utilisateurs</a></li>
-							</ul>
-						</div>
-					</li>
+					<li><a href="{{ route('groupes.index') }}" class="active"><i class="lnr lnr-user"></i><span> Gestion des clients</span></a></li>
+					<li><a href="{{ route('users.all') }}"><i class="lnr lnr-users"></i><span> Comptes utilisateurs</span></a></li>
 				</ul>
 			</nav>
 		</div>

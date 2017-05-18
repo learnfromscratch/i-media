@@ -22,7 +22,7 @@ class UserController extends Controller
      */
     public function all()
     {
-        $users = User::where('groupe_id', '<>', 1)->orderBy('groupe_id', 'desc')->get();
+        $users = User::select()->orderBy('updated_at', 'desc')->get();
         return view('admin.users', compact('users'));
     }
 

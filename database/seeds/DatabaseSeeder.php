@@ -18,6 +18,11 @@ class DatabaseSeeder extends Seeder
         $this->call(UsersTableSeeder::class);
         $this->call(PermissionRoleTableSeeder::class);
 
-        factory(App\Abonnement::class, 3)->create();
+        factory(App\Abonnement::class, 3)->create()->each(function(App\Abonnement $abonnement) {
+                factory(App\User::class, 10)
+                    ->create([
+                        'groupe_id' => $abonnement->groupe_id,
+                    ]);
+            });;
     }
 }

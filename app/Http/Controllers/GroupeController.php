@@ -35,7 +35,10 @@ class GroupeController extends Controller
         {
             return redirect()->back()->with('error', 'Vous n êtes pas autorisé à éffectuer cette action');
         }
-        return view('admin.create');
+
+        $groupes = Groupe::all();
+
+        return view('admin.create', compact('groupes'));
     }
 
     /**
@@ -73,7 +76,7 @@ class GroupeController extends Controller
         User::insert([
             'name' => $request['name'],
             'email' => $request['email'],
-            'password' => $request['password'],
+            'password' => bcrypt($request['password']),
             'groupe_id' => $groupe->id,
             'role_id' => 2,
         ]);
