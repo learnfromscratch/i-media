@@ -35,7 +35,7 @@
 								{{ count($keywords) }} <span>Mot clés</span>
 							</div>
 							<div class="col-md-4 stat-item">
-								{{ count($users) }} <span>Utilisateurs</span>
+								{{ count($users) }} <span>Comptes</span>
 							</div>
 							<div class="col-md-4 stat-item">
 								0 <span>PDF téléchagés</span>
@@ -49,7 +49,7 @@
 					<div class="profile-info">
 						<h4 class="heading">Infos du client</h4>
 						<ul class="list-unstyled list-justify">
-							<li>Nombre d'utilisateurs<span>{{ $groupe->nbrUser }}</span></li>
+							<li>Max compte utilisateur<span>{{ $groupe->nbrUser }}</span></li>
 							<li>Numéro de téléphone <span>{{ $groupe->tel }}</span></li>
 							<li>Adresse <span>{{ $groupe->address }}</span></li>
 						</ul>

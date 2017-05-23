@@ -20,7 +20,7 @@
 			<div class="panel-heading">
 				<h3 class="panel-title">Liste des clients</h3><br>
 				<div class="row">
-					<a href="{{ route('groupes.create') }}" class="btn btn-success btn-toastr"><i class="fa fa-plus fa-fw"></i> Ajouter un client</a>
+					<a href="{{ route('groupes.create') }}" class="btn btn-success btn-toastr"><i class="fa fa-plus fa-fw"></i>Ajouter un client</a>
 					
 					<form class="pull-right">
 						<div class="input-group">
@@ -38,6 +38,7 @@
 							<th>Téléphone</th>
 							<th>Adresse</th>
 							<th>Status abonnement</th>
+							<th>Action</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -54,6 +55,10 @@
 								@else
 									<td><span class="label label-warning">NON VALIDE</span></td>
 								@endif
+								<td>
+									<a href="{{ route('groupes.show', ['id' => $groupe->id]) }}" class="btn btn-info btn-xs btn-toastr"><i class="fa fa-eye fa-faw"></i></a>
+									<a href="{{ route('groupes.destroy', ['id' => $groupe->id]) }}" class="btn btn-danger btn-xs btn-toastr"><i class="fa fa-trash fa-faw"></i></a>
+								</td>
 							</tr>
 						@endforeach
 					</tbody>
@@ -70,7 +75,7 @@
 	  table = document.getElementById("myTable");
 	  tr = table.getElementsByTagName("tr");
 	  for (i = 0; i < tr.length; i++) {
-	    td = tr[i].getElementsByTagName("td")[1];
+	    td = tr[i].getElementsByTagName("td")[0];
 	    if (td) {
 	      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
 	        tr[i].style.display = "";

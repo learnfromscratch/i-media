@@ -38,7 +38,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('admin');
+        
     }
 
     /**
@@ -71,9 +71,9 @@ class RegisterController extends Controller
             'groupe_id' => $data['groupe_id'],
         ]);
 
-        if (isset($data['sousGroupe_id']))
+        if (isset($data['sous_groupe_id']))
         {
-            $user->sousGroupe_id = $data['sousGroupe_id'];
+            $user->sous_groupe_id = $data['sous_groupe_id'];
             $user->save();
         }
 

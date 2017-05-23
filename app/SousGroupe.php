@@ -12,11 +12,11 @@ class SousGroupe extends Model
 
     public function groupe()
     {
-    	$this->belongsTo('App\Groupe');
+    	return $this->belongsTo('App\Groupe');
     }
 
     public function users()
     {
-    	$this->hasMany('App\User');
+    	return $this->hasMany('App\User');
     }
 }

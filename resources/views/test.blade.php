@@ -7,196 +7,220 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
 
-  <!-- Material design -->
-  <link rel="stylesheet" type="text/css" href="/mdl/material.min.css">
-
   <link rel="stylesheet" type="text/css" href="/css/test.css">
 </head>
 <body>
+	<!-- Sidebar Wrapper -->
+	<div id="sidebar-wrapper">
+		<ul class="sidebar-nav list-unstyled">
+			<li class="sidebar-brand">
+				<a href="#">AppName</a>
+			</li>
+			<li>
+				<a href="#">Tableau de bord</a>
+			</li>
+			<li class="active">
+				<a href="#">Tous</a>
+			</li>
+			<li>
+				<a href="#">Aujourd'hui</a>
+			</li>
+			<li>
+				<a href="#">Dans la semaine</a>
+			</li>
+			<li>
+				<a href="#">Dans le mois</a>
+			</li>
+			<li>
+				<a href="#">Les 3 derniers mois</a>
+			</li>
+			<li>
+				<a href="#">Plus <i class="fa fa-plus fa-fw pull-right" aria-hidden="true"></i></a>
+			</li>
+			<li>
+				<a href="#">Aide <i class="fa fa-question fa-fw pull-right" aria-hidden="true"></i></a>
+			</li>
+		</ul>	
 
-    <div id="row">
-    	<!-- Sidebar Wrapper -->
-    	<div class="sidebar-wrapper col-md-2">
-    		<ul class="sidebar-nav list-unstyled toggle">
-    			<li class="sidebar-brand">
-    				<a href="#">AppName</a>
-    			</li>
-    			<li>
-    				<a href="#">Tableau de bord <i class="fa fa-angle-right fa-fw fa-lg pull-right" aria-hidden="true"></i></a>
-    			</li>
-    			<li class="active">
-    				<a href="#">Tous <i class="fa fa-angle-right fa-fw fa-lg pull-right" aria-hidden="true"></i></a>
-    			</li>
-    			<li>
-    				<a href="#">Aujourd'hui <i class="fa fa-angle-right fa-fw fa-lg pull-right" aria-hidden="true"></i></a>
-    			</li>
-    			<li>
-    				<a href="#">Dans la semaine <i class="fa fa-angle-right fa-fw fa-lg pull-right" aria-hidden="true"></i></a>
-    			</li>
-    			<li>
-    				<a href="#">Dans le mois <i class="fa fa-angle-right fa-fw fa-lg pull-right" aria-hidden="true"></i></a>
-    			</li>
-    			<li>
-    				<a href="#">Les 3 derniers mois <i class="fa fa-angle-right fa-fw fa-lg pull-right" aria-hidden="true"></i></a>
-    			</li>
-    			<li>
-    				<a href="#">Plus <i class="fa fa-plus fa-fw pull-right" aria-hidden="true"></i></a>
-    			</li>
-    			<li>
-    				<a href="#">Aide <i class="fa fa-question fa-fw pull-right" aria-hidden="true"></i></a>
-    			</li>
-    		</ul>	
-    			
-    	</div>
-    	<!-- /Sidebar Wrapper -->
+		<!-- Sidebar btn -->
+		<div id="sidebar-btn">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<!-- /Sidebar btn -->
+	</div>
+	<!-- /Sidebar Wrapper -->
 
-    	<!-- Navbar -->
-    	<nav class="navbar navbar-default col-md-10 col-md-offset-2" style="background: white;">
-    		<div class="navbar-header">
-		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="toggle" aria-expanded="false">
-		        <span class="sr-only">Toggle navigation</span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		      </button>
-		    </div>
-
-    		<form class="navbar-form navbar-left" action="" method="">
-    			<div class="form-group">
-    				<i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i>
-    				<input  id="search" type="text" name="data" class="form-control input-lg" placeholder="Recherche">
-    			</div>
-    		</form>
-
-    		<ul class="nav navbar-nav navbar-right">
-    			<li><a href=""><i class="fa fa-bell fa-fw fa-lg"></i><span class="badge">7</span></a></li>
-    			<li class="dropdown">
-		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">username <span class="caret"></span></a>
+	<nav class="navbar navbar-default navbar-fixed-top">
+	  <div class="container-fluid">
+	    <div class="container__item">
+			<form class="navbar-form navbar-left">
+				<input type="email" class="form__field" placeholder="Votre recherche" />
+				<button type="button" class="btn btn--primary btn--inside"><i class="fa fa-search"></i></button>
+			</form>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#"><i class="fa fa-bell fa-fw"></i></a></li>
+				<li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">UserName <span class="caret"></span></a>
 		          <ul class="dropdown-menu">
-		            <!--<li role="separator" class="divider"></li>-->
-		            <li><a href="#">Déconnexion</a></li>
+		            <li><a href="#">Action</a></li>
+		            <li><a href="#">Another action</a></li>
+		            <li><a href="#">Something else here</a></li>
+		            <li role="separator" class="divider"></li>
+		            <li><a href="#">Separated link</a></li>
 		          </ul>
 		        </li>
-    		</ul>
-    	</nav>
-    	<!-- /Navbar -->
+			</ul>
+		</div>
+	  </div>
+	</nav>
 
-    	<div class="page-content">
-	    	<!-- Section -->
-	    	<section class="col-md-7 col-md-offset-2">
+		<section class="well">
+			<div class="media">
+			  <div class="media-body">
+			    <h4 class="media-heading">John Doe</h4>
+			    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			  </div>
+			</div>
+			<div class="media">
+			  <div class="media-body">
+			    <h4 class="media-heading">John Doe</h4>
+			    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			  </div>
+			</div>
+			<div class="media">
+			  <div class="media-body">
+			    <h4 class="media-heading">John Doe</h4>
+			    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			  </div>
+			</div>
+			<div class="media">
+			  <div class="media-body">
+			    <h4 class="media-heading">John Doe</h4>
+			    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			  </div>
+			</div>
+			<div class="media">
+			  <div class="media-body">
+			    <h4 class="media-heading">John Doe</h4>
+			    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			  </div>
+			</div>
+			<div class="media">
+			  <div class="media-body">
+			    <h4 class="media-heading">John Doe</h4>
+			    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			  </div>
+			</div>
+			<div class="media">
+			  <div class="media-body">
+			    <h4 class="media-heading">John Doe</h4>
+			    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			  </div>
+			</div>
+			<div class="media">
+			  <div class="media-body">
+			    <h4 class="media-heading">John Doe</h4>
+			    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			  </div>
+			</div>
+			<div class="media">
+			  <div class="media-body">
+			    <h4 class="media-heading">John Doe</h4>
+			    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			  </div>
+			</div>
+			<div class="media">
+			  <div class="media-body">
+			    <h4 class="media-heading">John Doe</h4>
+			    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			  </div>
+			</div>
+			<div class="media">
+			  <div class="media-body">
+			    <h4 class="media-heading">John Doe</h4>
+			    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			  </div>
+			</div>
+			
+		</section>
+	
 
-	    	<div class="tabs">
-	    		<ul class="list-inline">
-	    			<li><a href="#papier" role="tab" data-toggle="tab">Papiers</a></li>
-	    			<li><a href="#electronique" role="tab" data-toggle="tab">Electroniques</a></li>
-	    		</ul>
-	    	</div>
-
-	    		<div class="media well">
-				  <div class="media-body">
-				    <h4 class="media-heading"><a href="#">John Doe</a><br>
-				    <small><i> publié le Novembre 17, 1993</i></small></h4>
-				    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				    tempor incididunt ut labore et dolore magna aliqua...<a href="#"><i>Lire la suite</i></a></p>
-				    <p>Source: <a href="#"><small>Dalaba</small></a> / Auteur: <a href="#"><small>Ibrahima</small></a></p>
-				  </div>
-				</div>
-				<div class="media well">
-				  <div class="media-body">
-				    <h4 class="media-heading"><a href="#">John Doe</a><br>
-				    <small><i> publié le Novembre 17, 1993</i></small></h4>
-				    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				    tempor incididunt ut labore et dolore magna aliqua...<a href="#"><i>Lire la suite</i></a></p>
-				    <p>Source: <a href="#"><small>Dalaba</small></a> / Auteur: <a href="#"><small>Ibrahima</small></a></p>
-				  </div>
-				</div>
-				<div class="media well">
-				  <div class="media-body">
-				    <h4 class="media-heading"><a href="#">John Doe</a><br>
-				    <small><i> publié le Novembre 17, 1993</i></small></h4>
-				    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				    tempor incididunt ut labore et dolore magna aliqua...<a href="#"><i>Lire la suite</i></a></p>
-				    <p>Source: <a href="#"><small>Dalaba</small></a> / Auteur: <a href="#"><small>Ibrahima</small></a></p>
-				  </div>
-				</div>
-				<div class="media well">
-				  <div class="media-body">
-				    <h4 class="media-heading"><a href="#">John Doe</a><br>
-				    <small><i> publié le Novembre 17, 1993</i></small></h4>
-				    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				    tempor incididunt ut labore et dolore magna aliqua...<a href="#"><i>Lire la suite</i></a></p>
-				    <p>Source: <a href="#"><small>Dalaba</small></a> / Auteur: <a href="#"><small>Ibrahima</small></a></p>
-				  </div>
-				</div>
-				<div class="media well">
-				  <div class="media-body">
-				    <h4 class="media-heading"><a href="#">John Doe</a><br>
-				    <small><i> publié le Novembre 17, 1993</i></small></h4>
-				    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				    tempor incididunt ut labore et dolore magna aliqua...<a href="#"><i>Lire la suite</i></a></p>
-				    <p>Source: <a href="#"><small>Dalaba</small></a> / Auteur: <a href="#"><small>Ibrahima</small></a></p>
-				  </div>
-				</div>
-				<div class="media well">
-				  <div class="media-body">
-				    <h4 class="media-heading"><a href="#">John Doe</a><br>
-				    <small><i> publié le Novembre 17, 1993</i></small></h4>
-				    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				    tempor incididunt ut labore et dolore magna aliqua...<a href="#"><i>Lire la suite</i></a></p>
-				    <p>Source: <a href="#"><small>Dalaba</small></a> / Auteur: <a href="#"><small>Ibrahima</small></a></p>
-				  </div>
-				</div>
-				<div class="media well">
-				  <div class="media-body">
-				    <h4 class="media-heading"><a href="#">John Doe</a><br>
-				    <small><i> publié le Novembre 17, 1993</i></small></h4>
-				    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				    tempor incididunt ut labore et dolore magna aliqua...<a href="#"><i>Lire la suite</i></a></p>
-				    <p>Source: <a href="#"><small>Dalaba</small></a> / Auteur: <a href="#"><small>Ibrahima</small></a></p>
-				  </div>
-				</div>
-				<div class="media well">
-				  <div class="media-body">
-				    <h4 class="media-heading"><a href="#">John Doe</a><br>
-				    <small><i> publié le Novembre 17, 1993</i></small></h4>
-				    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				    tempor incididunt ut labore et dolore magna aliqua...<a href="#"><i>Lire la suite</i></a></p>
-				    <p>Source: <a href="#"><small>Dalaba</small></a> / Auteur: <a href="#"><small>Ibrahima</small></a></p>
-				  </div>
-				</div>
-				
-	    	</section>
-	    	<!-- /Section -->
-
-	    	<!-- Aside -->
-	    	<aside class="col-md-3">
-	    		<div class="well">
-	    			<h4>Flux RSS</h4>
-	    		</div>
-
-	    		<div class="well">
-	    			<h4>Mots clés</h4>
-	    			<ul id="keyword" class="list-unstyled list-inline">
-	    				<li><a class="label label-default">Fed</a></li>
-	    				<li><a class="label label-default">Obama</a></li>
-	    				<li><a class="label label-default">Banque</a></li>
-	    				<li><a class="label label-default">Politique</a></li>
-	    			</ul>
-	    			
-	    		</div>
-	    	</aside>
-	    	<!-- /Aside -->
-
-	    </div>
-    </div>
-    <!-- /Row -->
 
     <!-- jQuery library -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-	<script src="/mdl/material.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#sidebar-btn').click(function() {
+				if ($('#sidebar-wrapper').css('left') == '0px') {
+					$('#sidebar-wrapper').css('left', '-200px');
+					$('.navbar').removeClass('undoResize').addClass('resize');
+				}
+				else {
+					$('#sidebar-wrapper').css('left', '0px');
+					$('.navbar').removeClass('resize').addClass('undoResize');
+				}
+			});
+		});
+	</script>
 
 </body>
 </html>

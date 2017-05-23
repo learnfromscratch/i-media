@@ -18,17 +18,23 @@ class Articles
 
 
 	public function init()
-	{
-		$role = Auth::user()->role;
-		$sousGroupe = Auth::user()->roles;
-		
+	{	
     	$querySearched = "";
 
-		if ($role->name === 'SuperAdmin')
+		if (Auth::user()->role->name === 'SuperAdmin')
     			$querySearched = '"*:* ';
-    		
-		/*foreach($user->keywords as $keyword){
-			$querySearched .= '"'.$keyword->name.'" ';
+    	elseif (Auth::user()->role->name === 'Admin') {
+    		foreach(Auth::user()->groupe->keywords as $keyword){
+				$querySearched .= '"'.$keyword->name.'" ';
+			}
+    	}
+    	else {
+    		$keywords = explode(',', Auth::user()->sousGroupe->keywords);
+    		foreach($keywords as $keyword){
+				$querySearched .= '"'.$keyword.'" ';
+			}
+    	}    		
+		/*
 		}*/
 			
 		$thequery = "";

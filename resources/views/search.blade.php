@@ -21,15 +21,8 @@
 	        <a href="#"><li>{{ strtolower($value) }} <i class="badge pull-right">{{ $count }}</i></li></a>
 	      @endforeach
 	    </ul>
-	    <ul class="list-unstyled">
-	      <li class="title">ABONNEMENTS</li>
-	        @foreach (Auth::user()->keywords as $keyword)
-	          <a href="#"><li>{{ strtolower($keyword->name) }}<i class="badge pull-right"></i></li></a>
-	        @endforeach
-	    </ul>
       </div>
     </aside>
-	
 @endsection
 
 @section('content')

@@ -22,7 +22,7 @@ class AdminController extends Controller
     public function index(\Solarium\Client $client)
     {
         $nbrUser = count(User::where('groupe_id', '<>', 1)->get());
-        $nbrGroupe = count(User::where('id', '<>', 1)->get());
+        $nbrGroupe = count(Groupe::where('id', '<>', 1)->get());
         $indexed = (new Solarium($client))->indexed();
         $nbrKeyword = count(Keyword::all());
     	return view('admin.dashboard', compact('nbrGroupe', 'nbrUser', 'indexed', 'nbrKeyword'));

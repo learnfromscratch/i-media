@@ -1,0 +1,33 @@
+body, html {
+  padding: 0;
+  margin: 0;
+  background: #F7FAFD
+}
+
+.mdl-layout__header {
+  background: #004ecb;
+  border: none;
+  color: white
+}
+
+.mdl-layout__drawer {
+  background: white
+}
+
+.mdl-layout__tab-bar {
+  background: #004ecb
+}
+
+.mdl-card {
+  text-align: center;
+}
+
+.mdl-card i {
+  font-size: 50px;
+  color: #aaa;
+  margin: 30px 0;
+}
+
+form .mdl-button--colored {
+  background-color: #ca3465
+}

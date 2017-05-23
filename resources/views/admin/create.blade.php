@@ -25,7 +25,7 @@
 				<h3 class="panel-title">Créer un nouveau compte</h3>
 			</div>
 			<div class="panel-body">
-				<div class="custom-tabs-line tabs-line-bottom left-aligned">
+				<div class="custom-tabs-line tabs-line-bottom">
 					<ul class="nav" role="tablist">
 						<li class="active"><a href="#client" role="tab" data-toggle="tab">Nouveau client</a></li>
 						<li><a href="#oxdata" role="tab" data-toggle="tab">Utilisateur OxData</a></li>

@@ -5,6 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Repositories\Solarium;
 use App\Repositories\Articles;
+use Illuminate\Support\Facades\Auth;
+use App\SousGroupe;
+use App\User;
+use App\Abonnement;
+use Gate;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -68,6 +74,16 @@ class HomeController extends Controller
         $data++;
         file_put_contents('Articles/pdf_download.txt', $data);
         return response()->download($request->file);
+    }
+
+    public function admin()
+    {
+        $groupe = Auth::user()->groupe;
+        $sousGroupes = $groupe->sousGroupes;
+        $users = $groupe->users;
+        $abonnement = $groupe->abonnement;
+
+        return view('groupeAdmin', compact('groupe', 'sousGroupes', 'users', 'abonnement'));
     }
 
 }
