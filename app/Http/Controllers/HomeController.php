@@ -5,12 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Repositories\Solarium;
 use App\Repositories\Articles;
-use Illuminate\Support\Facades\Auth;
-use App\SousGroupe;
-use App\User;
-use App\Abonnement;
-use Gate;
-use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -42,11 +36,6 @@ class HomeController extends Controller
         return view('home', compact('resultset', 'facet1', 'facet2', 'facet3'));
     }
 
-
-    /**
-     *
-     * @return int
-     */
     public function search(Request $request)
     {
         $resultset = (new Articles($this->client))->search($request->data);
@@ -55,6 +44,18 @@ class HomeController extends Controller
         $facet3 = $resultset->getFacetSet()->getFacet('source');
 
         $search = $request->data;
+
+        return view('search', compact('resultset', 'search', 'facet1', 'facet2', 'facet3'));   
+    }
+
+    public function filter($data)
+    {
+        $resultset = (new Articles($this->client))->search($data);
+        $facet1 = $resultset->getFacetSet()->getFacet('language');
+        $facet2 = $resultset->getFacetSet()->getFacet('author');
+        $facet3 = $resultset->getFacetSet()->getFacet('source');
+
+        $search = $data;
 
         return view('search', compact('resultset', 'search', 'facet1', 'facet2', 'facet3'));   
     }
@@ -74,16 +75,6 @@ class HomeController extends Controller
         $data++;
         file_put_contents('Articles/pdf_download.txt', $data);
         return response()->download($request->file);
-    }
-
-    public function admin()
-    {
-        $groupe = Auth::user()->groupe;
-        $sousGroupes = $groupe->sousGroupes;
-        $users = $groupe->users;
-        $abonnement = $groupe->abonnement;
-
-        return view('groupeAdmin', compact('groupe', 'sousGroupes', 'users', 'abonnement'));
     }
 
 }

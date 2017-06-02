@@ -69,6 +69,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'groupe_id' => $data['groupe_id'],
+            'role_id' => $data['role_id'],
         ]);
 
         if (isset($data['sous_groupe_id']))

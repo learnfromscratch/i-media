@@ -17,7 +17,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/client/admin', 'HomeController@admin')->name('client.admin');
+Route::get('/client/{id}/admin', 'GroupeController@admin')->name('client.admin');
 
 Route::get('/search', 'HomeController@search')->name('articles.search');
 
@@ -29,11 +29,11 @@ Route::post('/groupes/store', 'SousGroupeController@store')->name('sousGroupes.s
 
 Route::get('/groupes/destroy/{id}', 'SousGroupeController@destroy')->name('sousGroupes.destroy');
 
-    Route::get('/users/all', 'UserController@all')->name('users.all');
-    Route::get('/users/create', 'UserController@create')->name('users.create');
-    Route::get('/users/{id}', 'UserController@show')->name('users.show');
-    Route::post('/users/update/{id}', 'UserController@update')->name('users.update');
-    Route::get('/users/destroy/{id}', 'UserController@destroy')->name('users.destroy');
+Route::get('/users/all', 'UserController@all')->name('users.all');
+Route::get('/users/create', 'UserController@create')->name('users.create');
+Route::get('/users/{id}', 'UserController@show')->name('users.show');
+Route::post('/users/update/{id}', 'UserController@update')->name('users.update');
+Route::get('/users/destroy/{id}', 'UserController@destroy')->name('users.destroy');
 
 Route::group(['middleware' => 'admin'], function () {
     Route::get('/clients/all', 'GroupeController@index')->name('groupes.index');

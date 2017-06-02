@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Groupe;
 use App\Keyword;
 use App\User;
@@ -38,7 +39,7 @@ class GroupeController extends Controller
 
         $groupes = Groupe::all();
 
-        return view('admin.create', compact('groupes'));
+        return view('admin.createGroupe', compact('groupes'));
     }
 
     /**
@@ -99,9 +100,10 @@ class GroupeController extends Controller
 
         $groupe = Groupe::find($id);
         $users = $groupe->users;
+        $sousGroupes = $groupe->sousGroupes;
         $keywords = $groupe->keywords;
 
-        return view('admin.groupeInfo', compact('groupe', 'keywords', 'users'));
+        return view('admin.groupeInfo', compact('groupe', 'keywords', 'users', 'sousGroupes'));
     }
 
     /**
@@ -169,5 +171,15 @@ class GroupeController extends Controller
         $groupe->delete();
 
         return redirect()->route('groupes.index')->with('success', 'Le client a été supprimer avec succès');
+    }
+
+    public function admin($id)
+    {
+        $groupe = Groupe::find($id);
+        $sousGroupes = $groupe->sousGroupes;
+        $users = $groupe->users;
+        $abonnement = $groupe->abonnement;
+
+        return view('clientAdmin', compact('groupe', 'sousGroupes', 'users', 'abonnement'));
     }
 }

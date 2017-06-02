@@ -6,8 +6,10 @@
 			<nav>
 				<ul class="nav">
 					<li><a href="{{ route('admin.dashboard') }}"><i class="lnr lnr-home"></i> <span>Tableau de bord</span></a></li>
-					<li><a href="{{ route('groupes.index') }}"><i class="lnr lnr-user"></i><span> Gestion des clients</span></a></li>
-					<li><a href="{{ route('users.all') }}" class="active"><i class="lnr lnr-users"></i><span> Comptes utilisateurs</span></a></li>
+					<li><a href="{{ route('groupes.index') }}"><i class="lnr lnr-users"></i><span> Liste des clients</span></a></li>
+					<li><a href="{{ route('groupes.create') }}"><i class="lnr lnr-plus-circle"></i><span> Ajouter un client</span></a></li>
+					<li><a href="{{ route('users.all') }}" class="active"><i class="lnr lnr-user"></i><span> Liste des utilisateurs</span></a></li>
+					<li><a href="{{ route('users.create') }}"><i class="lnr lnr-plus-circle"></i><span> Ajouter utilisateur</span></a></li>
 				</ul>
 			</nav>
 		</div>

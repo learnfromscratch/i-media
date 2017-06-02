@@ -38,7 +38,7 @@ class UserController extends Controller
             return redirect()->back()->with('error', 'Vous n êtes pas autorisé à éffectuer cette action');
         }
 
-        return view('admin.create');
+        return view('admin.createUser');
     }
 
     /**

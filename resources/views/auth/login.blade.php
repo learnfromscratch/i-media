@@ -75,8 +75,8 @@
                     <div class="right">
                         <div class="overlay"></div>
                         <div class="content text">
-                            <h1 class="heading">Portail de presse monitoring</h1>
-                            <p>by ITELSYS</p>
+                            <h1 class="heading">Presse monitoring</h1>
+                            <p>by OxData</p>
                         </div>
                     </div>
                     <div class="clearfix"></div>

@@ -6,8 +6,10 @@
 			<nav>
 				<ul class="nav">
 					<li><a href="{{ route('admin.dashboard') }}"><i class="lnr lnr-home"></i> <span>Tableau de bord</span></a></li>
-					<li><a href="{{ route('groupes.index') }}" class="active"><i class="lnr lnr-user"></i><span> Gestion des clients</span></a></li>
-					<li><a href="{{ route('users.all') }}"><i class="lnr lnr-users"></i><span> Comptes utilisateurs</span></a></li>
+					<li><a href="{{ route('groupes.index') }}" class="active"><i class="lnr lnr-users"></i><span> Liste des clients</span></a></li>
+					<li><a href="{{ route('groupes.create') }}"><i class="lnr lnr-plus-circle"></i><span> Ajouter un client</span></a></li>
+					<li><a href="{{ route('users.all') }}"><i class="lnr lnr-user"></i><span> Liste des utilisateurs</span></a></li>
+					<li><a href="{{ route('users.create') }}"><i class="lnr lnr-plus-circle"></i><span> Ajouter utilisateur</span></a></li>
 				</ul>
 			</nav>
 		</div>
@@ -71,16 +73,36 @@
 			<!-- LEFT COLUMN -->
 			<!-- RIGHT COLUMN -->
 			<div class="profile-right">
-				<h4 class="heading"></h4>
+				<div class="heading"><a href="{{ route('client.admin',['id'=>$groupe->id]) }}" class="btn btn-default">Espace administration du client</a></div>
 				<!-- TABBED CONTENT -->
 				<div class="custom-tabs-line tabs-line-bottom left-aligned">
 					<ul class="nav" role="tablist">
-						<li class="active"><a href="#users" role="tab" data-toggle="tab">Comptes utilisateurs</a></li>
-						<li><a href="#keyword" role="tab" data-toggle="tab">Mots clés</a></li>
+						<li class="active"><a href="#keyword" role="tab" data-toggle="tab">Mots clés</a></li>
+						<li><a href="#users" role="tab" data-toggle="tab">Comptes utilisateurs</a></li>
+						<li><a href="#groupes" role="tab" data-toggle="tab">Groupes</a></li>
 					</ul>
 				</div>
 				<div class="tab-content">
-					<div class="tab-pane fade in active" id="users">
+					<div class="tab-pane fade  in active" id="keyword">
+						<div class="table-responsive">
+							<table class="table project-table">
+								<thead>
+									<tr>
+										<th>Liste des mots clés du client</th>
+									</tr>
+								</thead>
+								<tbody>
+									@foreach($keywords as $keyword)
+										<tr>
+											<td>{{ $keyword->name }}</td>
+										</tr>
+									@endforeach
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					<div class="tab-pane fade" id="users">
 						<div class="table-responsive">
 							<table class="table project-table">
 								<thead>
@@ -100,18 +122,23 @@
 							</table>
 						</div>
 					</div>
-					<div class="tab-pane fade" id="keyword">
+
+					<div class="tab-pane fade" id="groupes">
 						<div class="table-responsive">
 							<table class="table project-table">
 								<thead>
 									<tr>
-										<th>Liste des mots clés du client</th>
+										<th>Nom</th>
+										<th>Utilisateurs</th>
+										<th>Mots clés</th>
 									</tr>
 								</thead>
 								<tbody>
-									@foreach($keywords as $keyword)
+									@foreach($sousGroupes as $sousGroupe)
 										<tr>
-											<td>{{ $keyword->name }}</td>
+											<td>{{ $sousGroupe->name }}</td>
+											<td>{{ count($sousGroupe->users) }}</td>
+											<td>{{ $sousGroupe->keywords }}</td>
 										</tr>
 									@endforeach
 								</tbody>
@@ -219,9 +246,6 @@
 							</div>
 						</div>
 						<!-- END TABBED CONTENT -->
-				        <p>
-				        	
-				        </p>
 				    </div>
 				    <div class="modal-footer">
 				    	<button type="submit" class="btn btn-success">Valider les modifications</button>

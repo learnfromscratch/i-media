@@ -27,6 +27,23 @@ class SousGroupeController extends Controller
     }
 
     /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $sousGroupe = SousGroupe::find($id);
+        $sousGroupe->keywords = implode(',', $request['tags']);
+
+        $sousGroupe->save();
+
+        return redirect()->back()->with('success', 'Groupe modifié avec succès');        
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id

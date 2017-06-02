@@ -6,8 +6,10 @@
 			<nav>
 				<ul class="nav">
 					<li><a href="{{ route('admin.dashboard') }}"><i class="lnr lnr-home"></i> <span>Tableau de bord</span></a></li>
-					<li><a href="{{ route('groupes.index') }}" class="active"><i class="lnr lnr-user"></i><span> Gestion des clients</span></a></li>
-					<li><a href="{{ route('users.all') }}"><i class="lnr lnr-users"></i><span> Comptes utilisateurs</span></a></li>
+					<li><a href="{{ route('groupes.index') }}" class="active"><i class="lnr lnr-users"></i><span> Liste des clients</span></a></li>
+					<li><a href="{{ route('groupes.create') }}"><i class="lnr lnr-plus-circle"></i><span> Ajouter un client</span></a></li>
+					<li><a href="{{ route('users.all') }}"><i class="lnr lnr-user"></i><span> Liste des utilisateurs</span></a></li>
+					<li><a href="{{ route('users.create') }}"><i class="lnr lnr-plus-circle"></i><span> Ajouter utilisateur</span></a></li>
 				</ul>
 			</nav>
 		</div>
@@ -20,8 +22,6 @@
 			<div class="panel-heading">
 				<h3 class="panel-title">Liste des clients</h3><br>
 				<div class="row">
-					<a href="{{ route('groupes.create') }}" class="btn btn-success btn-toastr"><i class="fa fa-plus fa-fw"></i>Ajouter un client</a>
-					
 					<form class="pull-right">
 						<div class="input-group">
 							<input type="text" value="" class="form-control" id="myInput" onkeyup="filtrer()" placeholder="Rechercher par nom">

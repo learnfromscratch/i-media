@@ -21,7 +21,7 @@ class Articles
 	{	
     	$querySearched = "";
 
-		if (Auth::user()->role->name === 'SuperAdmin')
+		if (Auth::user()->groupe->id === 1)
     			$querySearched = '"*:* ';
     	elseif (Auth::user()->role->name === 'Admin') {
     		foreach(Auth::user()->groupe->keywords as $keyword){

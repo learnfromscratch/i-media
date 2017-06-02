@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->integer('groupe_id')->unsigned();
             $table->integer('sous_groupe_id')->unsigned()->nullable();
-            $table->integer('role_id')->unsigned()->default(3);
+            $table->integer('role_id')->unsigned();
             $table->foreign('groupe_id')->references('id')->on('groupes')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('sous_groupe_id')->references('id')->on('sous_groupes')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('role_id')->references('id')->on('roles')->onUpdate('cascade')->onDelete('cascade');
