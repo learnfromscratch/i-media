@@ -54,6 +54,6 @@ class SousGroupeController extends Controller
         $sousGroupe = SousGroupe::find($id);
         $sousGroupe->delete();
 
-        return redirect()->back()->with('success', 'Le client a été supprimer avec succès');
+        return redirect()->back()->with('success', 'Le groupe a été supprimer avec succès');
     }   //
 }

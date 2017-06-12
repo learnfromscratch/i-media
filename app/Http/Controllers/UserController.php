@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Keyword;
+use App\Groupe;
 use Illuminate\Http\Request;
 use Carbon\carbon;
 use Gate;
@@ -38,7 +39,9 @@ class UserController extends Controller
             return redirect()->back()->with('error', 'Vous n êtes pas autorisé à éffectuer cette action');
         }
 
-        return view('admin.createUser');
+        $groupes = Groupe::all();
+
+        return view('admin.createUser', compact('groupes'));
     }
 
     /**

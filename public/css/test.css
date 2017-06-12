@@ -1,0 +1,115 @@
+html, body {
+	padding: 0;
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+}
+
+.mdl-layout__tab:hover {
+	color: white;
+	text-decoration: none;
+}
+
+.mdl-layout.is-upgraded .mdl-layout__tab.is-active::after {
+    height: 3px;
+}
+
+.mdl-layout__drawer .mdl-layout-title {
+	padding-top: 100px;
+	background-image: url('/img/bg.png');
+	color: white;
+}
+
+.page-content {
+	margin-top: 5px;
+}
+
+#p2 {
+	width: 100%;
+	position: fixed;
+	z-index: 9999;
+}
+
+.mdl-textfield__input {
+	font-family: 'Roboto', sans-serif;
+}
+
+.section--center {
+	margin-bottom: 15px;
+}
+
+.mdl-card__supporting-text a{
+	color: black;
+}
+
+.section-img {
+	width: 100%;
+	height: auto;
+}
+
+.aside .mdl-card__title-text {
+	font-size: 16px;
+	color: rgb(33, 150, 243);
+	text-transform: uppercase;
+}
+
+
+
+
+.demo-ribbon {
+  width: 100%;
+  height: 40vh;
+  flex-shrink: 0;
+}
+
+.demo-main {
+  margin-top: -39vh;
+  flex-shrink: 0;
+}
+
+.demo-header .mdl-layout__header-row {
+  padding-left: 40px;
+}
+
+.demo-container {
+  max-width: 1600px;
+  width: calc(100% - 16px);
+  margin: 0 auto;
+}
+
+.demo-content {
+  border-radius: 2px;
+  padding: 30px 56px;
+  margin-bottom: 80px;
+}
+
+.demo-content img {
+	width: 100%;
+	height: auto;
+}
+
+.demo-layout.is-small-screen .demo-content {
+  padding: 40px 28px;
+}
+
+.demo-content h3 {
+  margin-top: 8px;
+}
+
+.demo-footer {
+  padding-left: 40px;
+}
+
+.demo-footer .mdl-mini-footer--link-list a {
+  font-size: 13px;
+}
+
+#view-pdf {
+  text-decoration: none;
+  position: fixed;
+  display: block;
+  right: 0;
+  bottom: 0;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  z-index: 900;
+}

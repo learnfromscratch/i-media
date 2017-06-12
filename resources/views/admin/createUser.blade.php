@@ -84,6 +84,19 @@
 	                </div>
 
 	                <div class="form-group">
+	                  <label for="role" class="col-sm-2 control-label">Groupe</label>
+
+	                  <div class="col-sm-4">
+	                    <select class="form-control" name="role_id" required>
+	                    	<option disabled>--Selectionnez un groupe--</option>
+	                    	@foreach ($groupes as $groupe)
+	                    		<option value="{{ $groupe->id }}">{{ $groupe->name }}</option>
+	                    	@endforeach
+	                    </select>
+	                  </div>
+	                </div>
+
+	                <div class="form-group">
 	                  <label for="role" class="col-sm-2 control-label">Rôle</label>
 
 	                  <div class="col-sm-4">

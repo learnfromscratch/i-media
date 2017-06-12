@@ -20,7 +20,7 @@ class GroupeController extends Controller
      */
     public function index()
     {
-        $groupes = Groupe::where('id', '<>', 1)->get();
+        $groupes = Groupe::where('id', '<>', 1)->orderBy('updated_at', 'desc')->get();
 
         return view('admin.groupes', compact('groupes'));
     }
@@ -178,8 +178,7 @@ class GroupeController extends Controller
         $groupe = Groupe::find($id);
         $sousGroupes = $groupe->sousGroupes;
         $users = $groupe->users;
-        $abonnement = $groupe->abonnement;
 
-        return view('clientAdmin', compact('groupe', 'sousGroupes', 'users', 'abonnement'));
+        return view('clientAdmin', compact('groupe', 'sousGroupes', 'users'));
     }
 }

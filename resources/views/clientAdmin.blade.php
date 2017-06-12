@@ -1,9 +1,5 @@
 @extends ('layouts.admin')
 
-@section('leftSidebar')
-	
-@endsection
-
 @section('content')
 	
 	<div class="custom-tabs-line tabs-line-bottom" align="center">
@@ -19,7 +15,7 @@
 		<div class="tab-pane fade in active" id="dashboard">
 			<div class="panel panel-headline">
 				<div class="panel-heading">
-					<h3 class="panel-title">Tableau de bord</h3>
+					<h3 class="panel-title">{{ $groupe->name }}</h3>
 					<!--
 					@php
 						$monday = new Carbon\Carbon('last monday');
@@ -42,7 +38,7 @@
 								<span class="icon"><i class="fa fa-user"></i></span>
 								<p>
 									<span class="number">{{ count($users) }}</span>
-									<span class="title">Comptes utilisateurs</span>
+									<span class="title">Comptes créés</span>
 								</p>
 							</div>
 						</div>
@@ -52,15 +48,6 @@
 								<p>
 									<span class="number">{{ $groupe->nbrUser }}</span>
 									<span class="title">Comptes maximum</span>
-								</p>
-							</div>
-						</div>
-						<div class="col-md-3">
-							<div class="metric">
-								<span class="icon"><i class="fa fa-key"></i></span>
-								<p>
-									<span class="number">{{ count($groupe->keywords) }}</span>
-									<span class="title">Mots clés</span>
 								</p>
 							</div>
 						</div>
@@ -94,10 +81,10 @@
 									<tbody>
 										@foreach ($sousGroupes as $sousGroupe)
 											<tr>	
-												<td width="20%">{{ $sousGroupe->name }}</td>
-												<td width="40%">{{ $sousGroupe->keywords }}</td>
-												<td width="10%">{{ count($sousGroupe->users) }}</td>
-												<td width="30%">
+												<td class="col-md-3">{{ $sousGroupe->name }}</td>
+												<td class="col-md-3">{{ $sousGroupe->keywords }}</td>
+												<td class="col-md-3">{{ count($sousGroupe->users) }}</td>
+												<td class="col-md-3">
 													<a href="{{ route('sousGroupes.destroy', ['id' => $sousGroupe->id]) }}" class="btn btn-primary btn-xs btn-toastr"><i class="fa fa-pencil fa-faw"></i></a>
 													<a href="{{ route('sousGroupes.destroy', ['id' => $sousGroupe->id]) }}" class="btn btn-danger btn-xs btn-toastr"><i class="fa fa-trash fa-faw"></i></a>
 												</td>

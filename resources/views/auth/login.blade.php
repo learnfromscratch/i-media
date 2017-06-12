@@ -30,7 +30,7 @@
                     <div class="left">
                         <div class="content">
                             <div class="header">
-                                <div class="logo text-center"><img src="assets/img/logo.png" alt="Logo"></div>
+                                <!--<div class="logo text-center"><img src="assets/img/logo.png" alt="Logo"></div>-->
                                 <p class="lead">Connectez-vous à votre compte</p>
                             </div>
                             <form class="form-auth-small" role="form" method="POST" action="{{ route('login') }}">
@@ -75,7 +75,7 @@
                     <div class="right">
                         <div class="overlay"></div>
                         <div class="content text">
-                            <h1 class="heading">Presse monitoring</h1>
+                            <h1 class="heading">I-MEDIA</h1>
                             <p>by OxData</p>
                         </div>
                     </div>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<RecordList>
+  <Record>
+    <Field name="Title">خاص</Field>
+    <Field name="Subtitle"></Field>
+    <Field name="Author"></Field>
+    <Field name="Relevant">1</Field>
+    <Field name="Source">Akhir sa</Field>
+    <Field name="SourceName">Akhir saa</Field>
+    <Field name="SourceDate">03.04.2017</Field>
+    <Field name="SourcePage">17</Field>
+    <Field name="KeywordGroup">Test Arabic English</Field>
+    <Field name="OrderId"></Field>
+    <Field name="ArticleLanguage">Arabic,English</Field>
+    <Field name="FormName">din a4</Field>
+    <Field name="ArticleSize">1656</Field>
+    <Field name="ImageSize">1647</Field>
+    <Field name="AVE"></Field>
+    <Field name="TOCPAGE">0</Field>
+    <Field name="RevDate">04.04.2017</Field>
+    <Field name="RevEdition">Morning</Field>
+    <Field name="ArticleNo">1044</Field>
+    <Field name="EvalUser">poste4</Field>
+    <Field name="Edition"></Field>
+    <Field name="Mediatype">Article</Field>
+    <Field name="Keywords"></Field>
+    <Field name="Fulltext">٠خاص۶ر
+</Field>
+    <Document name="170403_Akhir saa_17_1044.pdf" />
+  </Record>
+</RecordList>
